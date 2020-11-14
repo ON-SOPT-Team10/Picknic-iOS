@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "tabbarIcnHomeSelected.png"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "tabbarIcnHomeSelected@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "tabbarIcnHomeSelected@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
