@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,16 +16,115 @@
                     <view key="view" contentMode="scaleToFill" id="FQY-hi-4i2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0mh-2X-Jky">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickListTableCell0" rowHeight="245" id="c6C-Bc-PZd" customClass="PickListTableCell0" customModule="Picknic_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="245"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c6C-Bc-PZd" id="ffA-Ps-pJQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="둘러보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0K-F3-wZv">
+                                                    <rect key="frame" x="20" y="65" width="84" height="29"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xpn-91-lRf">
+                                                    <rect key="frame" x="0.0" y="100" width="414" height="145"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="145" id="4yX-S1-rmK"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2R2-Sb-nlP">
+                                                        <size key="itemSize" width="70" height="105"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCollectionCell" id="agI-Fd-1js" customClass="ProfileCollectionCell" customModule="Picknic_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="22" width="70" height="101"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nqz-RQ-bq1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="101"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSl-xe-eiK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="aSl-xe-eiK" secondAttribute="height" multiplier="1:1" id="4ae-aN-K04"/>
+                                                                            <constraint firstAttribute="height" constant="70" id="8qn-ZK-gt0"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button" image="curator1"/>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plp-Ef-pEa">
+                                                                        <rect key="frame" x="2" y="83" width="66" height="18"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="18" id="KQa-Eo-8XK"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="aSl-xe-eiK" firstAttribute="top" secondItem="nqz-RQ-bq1" secondAttribute="top" id="8oD-fn-2Nw"/>
+                                                                    <constraint firstItem="aSl-xe-eiK" firstAttribute="leading" secondItem="nqz-RQ-bq1" secondAttribute="leading" id="faB-Yx-SFa"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="aSl-xe-eiK" secondAttribute="trailing" id="hqC-AJ-3sw"/>
+                                                                    <constraint firstItem="Plp-Ef-pEa" firstAttribute="top" secondItem="aSl-xe-eiK" secondAttribute="bottom" constant="13" id="xke-4t-IWD"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="70" height="101"/>
+                                                            <connections>
+                                                                <outlet property="nicknameLabel" destination="Plp-Ef-pEa" id="AAo-jD-HeA"/>
+                                                                <outlet property="profileBtn" destination="aSl-xe-eiK" id="MBT-Zn-tWT"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xpn-91-lRf" secondAttribute="trailing" id="4xI-zF-FU5"/>
+                                                <constraint firstItem="xpn-91-lRf" firstAttribute="leading" secondItem="ffA-Ps-pJQ" secondAttribute="leading" id="PHb-fK-sZ5"/>
+                                                <constraint firstAttribute="bottom" secondItem="xpn-91-lRf" secondAttribute="bottom" id="bUu-ok-84P"/>
+                                                <constraint firstItem="D0K-F3-wZv" firstAttribute="leading" secondItem="ffA-Ps-pJQ" secondAttribute="leading" constant="20" id="ePX-pZ-5f7"/>
+                                                <constraint firstItem="xpn-91-lRf" firstAttribute="top" secondItem="D0K-F3-wZv" secondAttribute="bottom" constant="6" id="ekH-yP-Kj0"/>
+                                                <constraint firstItem="D0K-F3-wZv" firstAttribute="top" secondItem="ffA-Ps-pJQ" secondAttribute="top" constant="65" id="roh-XM-aPJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cell0CollectionView" destination="xpn-91-lRf" id="bbN-sh-Rn1"/>
+                                            <outlet property="cellTitleLabel" destination="D0K-F3-wZv" id="W2J-xD-CtY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9ba-tm-CgL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9ba-tm-CgL" firstAttribute="trailing" secondItem="0mh-2X-Jky" secondAttribute="trailing" id="3xv-2T-7TP"/>
+                            <constraint firstItem="0mh-2X-Jky" firstAttribute="top" secondItem="9ba-tm-CgL" secondAttribute="top" id="XH0-pS-b9a"/>
+                            <constraint firstItem="0mh-2X-Jky" firstAttribute="leading" secondItem="9ba-tm-CgL" secondAttribute="leading" id="fWw-hA-cRG"/>
+                            <constraint firstItem="9ba-tm-CgL" firstAttribute="bottom" secondItem="0mh-2X-Jky" secondAttribute="bottom" id="xfr-GB-HRR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickListTableView" destination="0mh-2X-Jky" id="ylk-qI-ktP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yp-oY-GdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="110"/>
+            <point key="canvasLocation" x="234.78260869565219" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>
+        <image name="curator1" width="70" height="70"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
