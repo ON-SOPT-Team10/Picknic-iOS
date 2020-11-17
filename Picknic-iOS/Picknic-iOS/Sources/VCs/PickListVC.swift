@@ -9,21 +9,43 @@ import UIKit
 
 class PickListVC: UIViewController {
 
+    @IBOutlet var pickListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pickListTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension PickListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell0.identifier) as? PickListTableCell0 else {
+            return UITableViewCell()
+        }
+        cell.setCell()
+        return cell
+        
+//        switch indexPath.row {
+//        case 0:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell0.identifier) as? PickListTableCell0 else {
+//                return UITableViewCell()
+//            }
+//            cell.setCell()
+//            return cell
+//
+//
+//        default:
+//            break
+//        }
+        
+//        return UITableViewCell()
+    }
+    
+    
 }

@@ -20,6 +20,8 @@
 		33B525F0255FCD240081221E /* PickListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B525EF255FCD240081221E /* PickListVC.swift */; };
 		33B525F3255FCD310081221E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B525F2255FCD310081221E /* ProfileVC.swift */; };
 		33B525F6255FCE1D0081221E /* Homes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B525F5255FCE1D0081221E /* Homes.storyboard */; };
+		6BC836C92563E3EA00C2A3ED /* PickListTableCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */; };
+		6BC836CC2563E7AE00C2A3ED /* ProfileCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		33B525EF255FCD240081221E /* PickListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickListVC.swift; sourceTree = "<group>"; };
 		33B525F2255FCD310081221E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		33B525F5255FCE1D0081221E /* Homes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Homes.storyboard; sourceTree = "<group>"; };
+		6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickListTableCell0.swift; sourceTree = "<group>"; };
+		6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +108,13 @@
 		33B525BB255FC0A50081221E /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */,
 				1C8438BB255FC8B00095DF11 /* ViewController.swift */,
 				33B525E9255FCCB60081221E /* TabbarVC.swift */,
 				33B525EC255FCD160081221E /* HomeVC.swift */,
 				33B525EF255FCD240081221E /* PickListVC.swift */,
 				33B525F2255FCD310081221E /* ProfileVC.swift */,
+				6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -239,7 +245,9 @@
 				1C8438B9255FC8A30095DF11 /* SceneDelegate.swift in Sources */,
 				33B525F0255FCD240081221E /* PickListVC.swift in Sources */,
 				33B525EA255FCCB60081221E /* TabbarVC.swift in Sources */,
+				6BC836C92563E3EA00C2A3ED /* PickListTableCell0.swift in Sources */,
 				1C8438BC255FC8B00095DF11 /* ViewController.swift in Sources */,
+				6BC836CC2563E7AE00C2A3ED /* ProfileCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
