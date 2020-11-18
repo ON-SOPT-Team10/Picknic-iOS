@@ -18,11 +18,11 @@ class PickListTableCell0: UITableViewCell {
     let bottomInset: CGFloat = 21
     let itemSpacing: CGFloat = 8
     
-    let horizonInset: CGFloat = 16
+    let horizonInset: CGFloat = 20
     
-    let rightSpacing: CGFloat = 60
+    let rightSpacing: CGFloat = 275
     
-    let lineSpacing: CGFloat = 15
+    let lineSpacing: CGFloat = 30
     
     func setCell() {
         cell0CollectionView.dataSource = self
@@ -43,14 +43,14 @@ class PickListTableCell0: UITableViewCell {
 }
 extension PickListTableCell0: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionCell.identifier, for: indexPath) as? ProfileCollectionCell else {
             return UICollectionViewCell()
         }
-        cell.setCell()
+        cell.setItemCell()
         return cell
     }
 }
@@ -58,7 +58,7 @@ extension PickListTableCell0: UICollectionViewDataSource {
 extension PickListTableCell0: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellHeight = collectionView.frame.height - topInset - bottomInset
+        let cellHeight = (collectionView.frame.height - topInset - bottomInset)
         let cellWidth = (collectionView.frame.width - lineSpacing - rightSpacing)
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -66,7 +66,7 @@ extension PickListTableCell0: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return lineSpacing }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return itemSpacing }
+        return 0 }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: topInset, left: horizonInset, bottom: bottomInset, right: horizonInset) }
 }
