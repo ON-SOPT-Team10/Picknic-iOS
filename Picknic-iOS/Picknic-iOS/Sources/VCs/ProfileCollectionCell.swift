@@ -15,9 +15,9 @@ class ProfileCollectionCell: UICollectionViewCell {
     
     static let identifier = "ProfileCollectionCell"
     
-    func setItemCell() {
-        profileImage.image = UIImage(named: "curator1")
-        nicknameLabel.text = "할리스커피"
+    func setItemCell(profile: ListProfile) {
+        profileImage.image = profile.makeImage()
+        nicknameLabel.text = profile.nickName
     }
     
 }

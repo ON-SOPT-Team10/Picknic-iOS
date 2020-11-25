@@ -23,6 +23,7 @@ class PickListTableCell1: UITableViewCell {
     @IBOutlet var cell1CollectionView: UICollectionView!
     
     func setCell() {
+        setItemData()
         cell1CollectionView.dataSource = self
         cell1CollectionView.delegate = self
     }
@@ -46,14 +47,14 @@ class PickListTableCell1: UITableViewCell {
 }
 extension PickListTableCell1: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7//8
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HashTagCollectionCell.identifier, for: indexPath) as? HashTagCollectionCell else {
             return UICollectionViewCell()
         }
-        cell.setCell(hashTag: String(indexPath.row)) //hashTagArr[indexPath.row])
+        cell.setCell(hashTag: hashTagArr[indexPath.row])
         return cell
     }
 }
