@@ -119,12 +119,58 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jyo-P5-Eul">
+                                                    <rect key="frame" x="0.0" y="57" width="375" height="116"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="116" id="lTB-UC-Bej"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="14u-S0-7au">
+                                                        <size key="itemSize" width="128" height="47"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HashTagCollectionCell" id="v8r-Ee-UXt" customClass="HashTagCollectionCell" customModule="Picknic_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="47"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8sP-o6-yha">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="47"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntl-kK-HOn" customClass="CustomButton" customModule="Picknic_iOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="47"/>
+                                                                        <state key="normal" title="전체"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="ntl-kK-HOn" firstAttribute="leading" secondItem="8sP-o6-yha" secondAttribute="leading" id="BZA-Pp-gPx"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ntl-kK-HOn" secondAttribute="bottom" id="E29-cY-ymr"/>
+                                                                    <constraint firstItem="ntl-kK-HOn" firstAttribute="top" secondItem="8sP-o6-yha" secondAttribute="top" id="S8u-gK-Qvc"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="ntl-kK-HOn" secondAttribute="trailing" id="mYn-6z-24z"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="128" height="47"/>
+                                                            <connections>
+                                                                <outlet property="hashTagBtn" destination="ntl-kK-HOn" id="XZW-5E-qEX"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Jyo-P5-Eul" secondAttribute="trailing" id="APb-b5-pHD"/>
+                                                <constraint firstItem="Jyo-P5-Eul" firstAttribute="top" secondItem="iPP-kk-Msy" secondAttribute="bottom" constant="4" id="I9m-b2-HZr"/>
                                                 <constraint firstItem="iPP-kk-Msy" firstAttribute="leading" secondItem="3FM-iQ-cy2" secondAttribute="leading" constant="20" id="To3-be-kQk"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jyo-P5-Eul" secondAttribute="bottom" id="drT-T1-n9N"/>
+                                                <constraint firstItem="Jyo-P5-Eul" firstAttribute="leading" secondItem="3FM-iQ-cy2" secondAttribute="leading" id="kcV-Sd-Nre"/>
                                                 <constraint firstItem="iPP-kk-Msy" firstAttribute="top" secondItem="3FM-iQ-cy2" secondAttribute="top" constant="22" id="zuD-T2-6wF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cell1CollectionView" destination="Jyo-P5-Eul" id="UeL-jK-Xiy"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickListTableCell2" rowHeight="252" id="cT6-Ho-MEd" customClass="PickListTableCell2" customModule="Picknic_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="446" width="375" height="252"/>
