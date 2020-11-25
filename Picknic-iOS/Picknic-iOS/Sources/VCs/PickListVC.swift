@@ -45,11 +45,11 @@ extension PickListVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell1.identifier) as? PickListTableCell1 else {
                 return UITableViewCell()
             }
-        
+            cell.setCell()
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell2.identifier) as? PickListTableCell2 else { return UITableViewCell() }
-            cell.setCell(item: items[indexPath.row - 2]) //rank: indexPath.row,
+            cell.setCell(item: items[indexPath.row - 2])
             return cell
 //            break
         }
