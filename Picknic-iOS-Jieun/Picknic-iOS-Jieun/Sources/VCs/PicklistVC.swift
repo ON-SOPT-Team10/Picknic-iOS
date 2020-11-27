@@ -92,7 +92,7 @@ extension PicklistVC : UITableViewDelegate, UITableViewDataSource {
         
         //섹션별 row사이즈 지정해주기
         if indexPath.section == 0 {
-            return 207
+            return 242
         }
         else if indexPath.section == 1 {
             return 168

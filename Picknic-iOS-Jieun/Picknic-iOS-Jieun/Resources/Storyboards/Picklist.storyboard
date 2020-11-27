@@ -22,15 +22,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TouringTVCell" rowHeight="207" id="Cyd-Bn-tXc" customClass="TouringTVCell" customModule="Picknic_iOS_Jieun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="207"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TouringTVCell" rowHeight="242" id="Cyd-Bn-tXc" customClass="TouringTVCell" customModule="Picknic_iOS_Jieun" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="242"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cyd-Bn-tXc" id="KBn-uT-pj2">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="242"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="둘러보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="766-iZ-uYT">
-                                                    <rect key="frame" x="20" y="30" width="84" height="28"/>
+                                                    <rect key="frame" x="20" y="65" width="84" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="BmC-wA-qpb"/>
                                                     </constraints>
@@ -39,7 +39,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-ws-7ju">
-                                                    <rect key="frame" x="0.0" y="68" width="414" height="129"/>
+                                                    <rect key="frame" x="0.0" y="103" width="414" height="129"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="101" id="OXE-p3-TSe"/>
@@ -95,7 +95,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Bbz-ws-7ju" secondAttribute="trailing" id="5Ku-Og-zHW"/>
                                                 <constraint firstItem="Bbz-ws-7ju" firstAttribute="leading" secondItem="KBn-uT-pj2" secondAttribute="leading" id="GvQ-fh-vWc"/>
-                                                <constraint firstItem="766-iZ-uYT" firstAttribute="top" secondItem="KBn-uT-pj2" secondAttribute="top" constant="30" id="fD0-89-JiU"/>
+                                                <constraint firstItem="766-iZ-uYT" firstAttribute="top" secondItem="KBn-uT-pj2" secondAttribute="top" constant="65" id="fD0-89-JiU"/>
                                                 <constraint firstAttribute="bottom" secondItem="Bbz-ws-7ju" secondAttribute="bottom" constant="10" id="ktF-jQ-sp6"/>
                                                 <constraint firstItem="Bbz-ws-7ju" firstAttribute="top" secondItem="766-iZ-uYT" secondAttribute="bottom" constant="10" id="o5b-gj-Ojg"/>
                                                 <constraint firstItem="766-iZ-uYT" firstAttribute="leading" secondItem="KBn-uT-pj2" secondAttribute="leading" constant="20" id="pqO-Dg-0ix"/>
@@ -106,7 +106,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PickTagTVCell" rowHeight="168" id="fLB-mb-lJA" customClass="PickTagTVCell" customModule="Picknic_iOS_Jieun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="235" width="414" height="168"/>
+                                        <rect key="frame" x="0.0" y="270" width="414" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fLB-mb-lJA" id="LKa-cI-uws">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
@@ -172,7 +172,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PicklistTVCell" rowHeight="242" id="SVX-5A-KsN" customClass="PicklistTVCell" customModule="Picknic_iOS_Jieun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="403" width="414" height="242"/>
+                                        <rect key="frame" x="0.0" y="438" width="414" height="242"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SVX-5A-KsN" id="vNV-Xz-PaJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="242"/>
