@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "curator3.png",
+      "filename" : "profileIcnArrow.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "curator3@2x.png",
+      "filename" : "profileIcnArrow@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "curator3@3x.png",
+      "filename" : "profileIcnArrow@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
