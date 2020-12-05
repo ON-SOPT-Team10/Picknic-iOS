@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C8438B8255FC8A30095DF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8438B6255FC8A30095DF11 /* AppDelegate.swift */; };
 		1C8438B9255FC8A30095DF11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8438B7255FC8A30095DF11 /* SceneDelegate.swift */; };
 		1C8438BC255FC8B00095DF11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8438BB255FC8B00095DF11 /* ViewController.swift */; };
+		33841C6E257B555C0058339F /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33841C6D257B555C0058339F /* APIConstants.swift */; };
+		33841C71257B55720058339F /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33841C70257B55720058339F /* GenericResponse.swift */; };
+		33841C74257B558F0058339F /* NetworkResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33841C73257B558F0058339F /* NetworkResults.swift */; };
 		33B525A6255FBFBB0081221E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B525A5255FBFBB0081221E /* Assets.xcassets */; };
 		33B525A9255FBFBB0081221E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B525A7255FBFBB0081221E /* LaunchScreen.storyboard */; };
 		33B525C9255FC12A0081221E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B525C8255FC12A0081221E /* Main.storyboard */; };
@@ -28,12 +31,17 @@
 		6B4113E4256E764C00D988D1 /* ListProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4113E3256E764C00D988D1 /* ListProfile.swift */; };
 		6BC836C92563E3EA00C2A3ED /* PickListTableCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */; };
 		6BC836CC2563E7AE00C2A3ED /* ProfileCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */; };
+		D3AE45019961BDDDC927FC9C /* Pods_Picknic_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BA727B8C9EA128E5251331 /* Pods_Picknic_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C8438B6255FC8A30095DF11 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C8438B7255FC8A30095DF11 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1C8438BB255FC8B00095DF11 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		274266AD803FA8D2B1135B46 /* Pods-Picknic-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picknic-iOS.release.xcconfig"; path = "Target Support Files/Pods-Picknic-iOS/Pods-Picknic-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		33841C6D257B555C0058339F /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		33841C70257B55720058339F /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		33841C73257B558F0058339F /* NetworkResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResults.swift; sourceTree = "<group>"; };
 		33B52599255FBFBA0081221E /* Picknic-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picknic-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B525A5255FBFBB0081221E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33B525A8255FBFBB0081221E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +62,8 @@
 		6B4113E3256E764C00D988D1 /* ListProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfile.swift; sourceTree = "<group>"; };
 		6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickListTableCell0.swift; sourceTree = "<group>"; };
 		6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionCell.swift; sourceTree = "<group>"; };
+		83BA727B8C9EA128E5251331 /* Pods_Picknic_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picknic_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9CC3A4309D7C3619956E478 /* Pods-Picknic-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picknic-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Picknic-iOS/Pods-Picknic-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +71,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AE45019961BDDDC927FC9C /* Pods_Picknic_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150BF82C8212723B88385D00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83BA727B8C9EA128E5251331 /* Pods_Picknic_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		33B52590255FBFBA0081221E = {
 			isa = PBXGroup;
 			children = (
 				33B5259B255FBFBA0081221E /* Picknic-iOS */,
 				33B5259A255FBFBA0081221E /* Products */,
+				7F02964B1DDBB79AC65EFD4C /* Pods */,
+				150BF82C8212723B88385D00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +173,9 @@
 		33B525BE255FC0B60081221E /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				33841C6D257B555C0058339F /* APIConstants.swift */,
+				33841C70257B55720058339F /* GenericResponse.swift */,
+				33841C73257B558F0058339F /* NetworkResults.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -184,6 +208,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		7F02964B1DDBB79AC65EFD4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9CC3A4309D7C3619956E478 /* Pods-Picknic-iOS.debug.xcconfig */,
+				274266AD803FA8D2B1135B46 /* Pods-Picknic-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33B525AD255FBFBB0081221E /* Build configuration list for PBXNativeTarget "Picknic-iOS" */;
 			buildPhases = (
+				FC9FB7D6AE9160BDDBCF851B /* [CP] Check Pods Manifest.lock */,
 				33B52595255FBFBA0081221E /* Sources */,
 				33B52596255FBFBA0081221E /* Frameworks */,
 				33B52597255FBFBA0081221E /* Resources */,
+				06F5A8578FB61255B0D92576 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,15 +287,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06F5A8578FB61255B0D92576 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Picknic-iOS/Pods-Picknic-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Picknic-iOS/Pods-Picknic-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Picknic-iOS/Pods-Picknic-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC9FB7D6AE9160BDDBCF851B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Picknic-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33B52595255FBFBA0081221E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1C8438B8255FC8A30095DF11 /* AppDelegate.swift in Sources */,
+				33841C74257B558F0058339F /* NetworkResults.swift in Sources */,
 				33B525ED255FCD160081221E /* HomeVC.swift in Sources */,
 				33B525F3255FCD310081221E /* ProfileVC.swift in Sources */,
 				1C8438B9255FC8A30095DF11 /* SceneDelegate.swift in Sources */,
+				33841C6E257B555C0058339F /* APIConstants.swift in Sources */,
 				6B4113E4256E764C00D988D1 /* ListProfile.swift in Sources */,
 				6B4113E1256E6B5C00D988D1 /* CustomButton.swift in Sources */,
 				6B0ACC752564D30A007E0547 /* Item.swift in Sources */,
@@ -269,6 +348,7 @@
 				6B0ACC6F2564CB9A007E0547 /* PickListTableCell1.swift in Sources */,
 				33B525EA255FCCB60081221E /* TabbarVC.swift in Sources */,
 				6B0ACC722564D20E007E0547 /* PickListTableCell2.swift in Sources */,
+				33841C71257B55720058339F /* GenericResponse.swift in Sources */,
 				6BC836C92563E3EA00C2A3ED /* PickListTableCell0.swift in Sources */,
 				1C8438BC255FC8B00095DF11 /* ViewController.swift in Sources */,
 				6BC836CC2563E7AE00C2A3ED /* ProfileCollectionCell.swift in Sources */,
@@ -407,6 +487,7 @@
 		};
 		33B525AE255FBFBB0081221E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9CC3A4309D7C3619956E478 /* Pods-Picknic-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -425,6 +506,7 @@
 		};
 		33B525AF255FBFBB0081221E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 274266AD803FA8D2B1135B46 /* Pods-Picknic-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
