@@ -8,5 +8,13 @@
 import Foundation
 
 struct APIConstants {
-    static let baseURL = ""
+    static let baseURL = "http://13.124.67.93:3000"
+    
+    
+    // 리스트 뷰
+    
+    
+    
+    // 프로필 뷰
+    static let profileURL = APIConstants.baseURL + "/profile"
 }
