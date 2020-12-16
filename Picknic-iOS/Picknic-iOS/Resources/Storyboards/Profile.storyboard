@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="width" secondItem="zTG-OA-yBP" secondAttribute="height" multiplier="1:1" id="RuA-3E-hB3"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImgProfile" translatesAutoresizingMaskIntoConstraints="NO" id="jZm-EB-PfZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImgProfile" translatesAutoresizingMaskIntoConstraints="NO" id="jZm-EB-PfZ" customClass="CustomProfileImage" customModule="Picknic_iOS" customModuleProvider="target">
                                 <rect key="frame" x="156.5" y="184" width="101" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jZm-EB-PfZ" secondAttribute="height" multiplier="1:1" id="cxR-Jb-XQb"/>

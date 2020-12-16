@@ -34,7 +34,9 @@ class ProfileVC: UIViewController {
             switch(result) {
             case .success(let data):
                 if let profileDataModel = data as? profileDataModel {
-//                    self.profileImageView.image = UIImage(named: )
+                    let url = URL(string: profileDataModel.profileImage)
+                    let data = try? Data(contentsOf: url!)
+                    self.profileImageView.image = UIImage(data: data!)
                     self.nameLabel.text = profileDataModel.userName
                     self.emailLabel.text = profileDataModel.userEmail
                 }
@@ -48,7 +50,9 @@ class ProfileVC: UIViewController {
                 print("networkFail")
             }
         }
+
     }
+
 
 }
 extension ProfileVC: UIImagePickerControllerDelegate {
@@ -62,7 +66,7 @@ extension ProfileVC: UIImagePickerControllerDelegate {
                 fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
             }
 
-        profileImageView.layer.cornerRadius = 50
+//        profileImageView.layer.cornerRadius = 50
         profileImageView.image = selectedImage
         
 
