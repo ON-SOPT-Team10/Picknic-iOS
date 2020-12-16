@@ -9,21 +9,35 @@ import UIKit
 
 class ProfileVC: UIViewController {
 
+    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getData() {
+        getProfileService.shared.getProfile() { (result) in
+            switch(result) {
+            case .success(let data):
+                if let profileDataModel = data as? profileDataModel {
+//                    self.profileImageView.image = UIImage(named: )
+                    self.nameLabel.text = profileDataModel.userName
+                    self.emailLabel.text = profileDataModel.userEmail
+                }
+            case .requestErr(_):
+                print("error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
-    */
 
 }
