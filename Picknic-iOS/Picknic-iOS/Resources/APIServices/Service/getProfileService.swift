@@ -14,7 +14,7 @@ struct getProfileService {
     
     func getProfile(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let url = APIConstants.profileURL //+ "/\(foodType)"
+        let url = APIConstants.profileURL
      
         let dataRequest = AF.request(url,
                                      method : .get,
@@ -51,8 +51,10 @@ struct getProfileService {
     
     private func getProfile(by json: JSON) -> NetworkResult<Any> {
         let data = json["data"] as JSON
-        var profileData = profileDataModel(id: data[0]["id"].intValue,
-                                           profileImage: data[0]["profileImage"].stringValue, userName: data[0]["userName"].stringValue, userEmail: data[0]["userEmail"].stringValue)
+        var profileData = profileDataModel(id: data["id"].intValue,
+                                           profileImage: data["profileImage"].stringValue,
+                                           userName: data["userName"].stringValue,
+                                           userEmail: data["userEmail"].stringValue)
         return .success(profileData)
     }
 }
