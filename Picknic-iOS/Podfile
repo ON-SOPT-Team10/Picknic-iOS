@@ -7,4 +7,5 @@ target 'Picknic-iOS' do
 
   # Pods for Picknic-iOS
   pod 'Alamofire'
+  pod 'SwiftyJSON','~>4.0'
 end
