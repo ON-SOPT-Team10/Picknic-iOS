@@ -6,37 +6,83 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
 
 class PicklistVC: UIViewController {
     
     @IBOutlet var picklistEntireTV: UITableView!
-    var picklistArray:[PicklistData] = []
+    var feedArray:[Feed] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getDataFromServer()
         picklistEntireTV.delegate = self
         picklistEntireTV.dataSource = self
         picklistEntireTV.separatorStyle = .none
         
-        setPicklistArray()
-        
     }
     
-    func setPicklistArray(){
-        
-        picklistArray.append(contentsOf: [
-            PicklistData(pickImg: "listImgContents1", pickTitle: "퇴근하고 한강에서 만나요, 한강 취미 5", pickSubtitle: "남는 시간에 뭐하지?", pickBookmark: "247"),
-            PicklistData(pickImg: "listImgContents2", pickTitle: "가을향 가득한 전어 요리를 먹으러 가려면", pickSubtitle: "오늘은 뭘 먹지? 전어를 먹을까 맛있겠지 전어", pickBookmark: "123"),
-            PicklistData(pickImg: "listImgContents3", pickTitle: "선선해서 딱 좋은 아차산 나홀로 등산", pickSubtitle: "건강한 아웃도어 라이프", pickBookmark: "54"),
-            PicklistData(pickImg: "listImgContents4", pickTitle: "따스하고 포근한 내 방 인테리어 TIP", pickSubtitle: "나도 할 수 있다! 내 방 꾸미기!", pickBookmark: "473"),
-            PicklistData(pickImg: "listImgContents1", pickTitle: "퇴근하고 한강에서 만나요, 한강 취미 5", pickSubtitle: "남는 시간에 뭐하지?", pickBookmark: "247"),
-            PicklistData(pickImg: "listImgContents2", pickTitle: "가을향 가득한 전어 요리를 먹으러 가려면", pickSubtitle: "오늘은 뭘 먹지? 전어를 먹을까 맛있겠지 전어", pickBookmark: "123"),
-            PicklistData(pickImg: "listImgContents3", pickTitle: "선선해서 딱 좋은 아차산 나홀로 등산", pickSubtitle: "건강한 아웃도어 라이프", pickBookmark: "54"),
-            PicklistData(pickImg: "listImgContents4", pickTitle: "따스하고 포근한 내 방 인테리어 TIP", pickSubtitle: "나도 할 수 있다! 내 방 꾸미기!", pickBookmark: "473")
-        ])
+    func getDataFromServer(){
+        MainService.shared.getMain(completion: { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let mainData = data as? EntireData {
+                    
+                    self.feedArray = mainData.feeds!
+                    self.picklistEntireTV.reloadData()
+                }
+                
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+        })
     }
     
+    @IBAction func touchUpBookmarkBtn(_ sender: UIButton) {
+        let cell = sender.superview?.superview as! PicklistTVCell
+        let index = self.picklistEntireTV.indexPath(for: cell)
+        var indexPath : IndexPath? = nil
+        indexPath = picklistEntireTV.indexPathForRow(at: picklistEntireTV.convert(sender.center, from: sender.superview))
+        
+        if index!.section == index!.section {
+            if index!.section == 2 {
+                
+                print(feedArray[index!.row].id)
+                BookmarkToggleService.shared.toggleUp(feedArray[index!.row].id) { (networkResult) -> (Void) in
+                    switch networkResult {
+                    case .success:
+                        print("success")
+                        
+                    case .requestErr(let msg):
+                        if let message = msg as? String {
+                            print(message)
+                        }
+                    case .pathErr:
+                        print("pathErr")
+                    case .serverErr:
+                        print("serverErr")
+                    case .networkFail:
+                        print("networkFail")
+                    }
+                    
+                }
+                getDataFromServer()
+            }
+            
+        }
+        
+    }
     
     
 }
@@ -52,14 +98,14 @@ extension PicklistVC : UITableViewDelegate, UITableViewDataSource {
         
         //섹션2일때만 picklistarray만큼 return
         if section == 2 {
-            return picklistArray.count
+            return feedArray.count
         }
         return 1
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         //첫번째 둘러보기 셀 정의
         let touringCell = tableView.dequeueReusableCell(withIdentifier: "TouringTVCell") as! TouringTVCell
         
@@ -69,10 +115,24 @@ extension PicklistVC : UITableViewDelegate, UITableViewDataSource {
         //세번째 픽리스트 셀 정의
         let picklistCell = tableView.dequeueReusableCell(withIdentifier: "PicklistTVCell") as! PicklistTVCell
         
-        picklistCell.picklistImgView.image = UIImage(named: picklistArray[indexPath.row].pickImg)
-        picklistCell.picklistTitleLabel.text = picklistArray[indexPath.row].pickTitle
-        picklistCell.picklistSubtitleLabel.text = picklistArray[indexPath.row].pickSubtitle
-        picklistCell.picklistBookmarkCntLabel.text = picklistArray[indexPath.row].pickBookmark
+        
+        if feedArray.count != 0 {
+            let url = URL(string: feedArray[indexPath.row].feedImage)
+            let imageData = try? Data(contentsOf: url!)
+            picklistCell.picklistImgView.image = UIImage(data: imageData!)
+            picklistCell.picklistTitleLabel.text = feedArray[indexPath.row].feedTitle
+            picklistCell.picklistSubtitleLabel.text = feedArray[indexPath.row].feedContents
+            picklistCell.picklistBookmarkCntLabel.text = "\(feedArray[indexPath.row].bookmarkCount)"
+            
+            if feedArray[indexPath.row].isBookmarked == true{
+                picklistCell.bookmarkSelectBtn.setImage((UIImage(named: "selectBookmark")), for: .normal)
+            }
+            else {
+                picklistCell.bookmarkSelectBtn.setImage((UIImage(named: "listBtnBookmark3")), for: .normal)
+            }
+            
+        }
+        
         
         
         // 각 섹션에 해당하는 셀 넣어주기

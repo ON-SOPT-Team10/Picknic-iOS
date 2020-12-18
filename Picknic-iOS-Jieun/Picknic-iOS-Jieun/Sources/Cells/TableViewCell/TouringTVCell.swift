@@ -7,27 +7,44 @@
 
 import UIKit
 
+
 class TouringTVCell: UITableViewCell {
 
     @IBOutlet var touringCV: UICollectionView!
-    var touringlistArray:[TouringlistData] = []
+    var storyArray:[Story] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        getDataFromServer()
         touringCV.delegate = self
         touringCV.dataSource = self
-        setTouringlistArray()
     }
     
-    func setTouringlistArray(){
-        touringlistArray.append(contentsOf: [
-            TouringlistData(touringImg: "curator1", touringTitle: "할리스커피"),
-            TouringlistData(touringImg: "curator2", touringTitle: "동역사거주"),
-            TouringlistData(touringImg: "curator3", touringTitle: "뮤지컬볼래"),
-            TouringlistData(touringImg: "curator1", touringTitle: "안녕안녕"),
-            TouringlistData(touringImg: "curator2", touringTitle: "큐레이션"),
-            TouringlistData(touringImg: "curator3", touringTitle: "picknic~")
-        ])
+    func getDataFromServer(){
+        MainService.shared.getMain(completion: { networkResult in
+                switch networkResult {
+                case .success(let data):
+                    if let mainData = data as? EntireData {
+                        
+                        self.storyArray = mainData.stories!
+                        self.touringCV.reloadData()
+
+                        print(self.storyArray)
+                    }
+                    
+                case .requestErr(let msg):
+                    if let message = msg as? String {
+                       print(message)
+                    }
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+                
+            })
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,14 +56,19 @@ class TouringTVCell: UITableViewCell {
 extension TouringTVCell : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return touringlistArray.count
+        return storyArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let touringCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TouringCVCell", for: indexPath) as! TouringCVCell
         
-        touringCell.touringImgView.image = UIImage(named: touringlistArray[indexPath.row].touringImg)
-        touringCell.touringNameLabel.text = touringlistArray[indexPath.row].touringTitle
+        let imgUrl = URL(string: storyArray[indexPath.row].storyImage)
+        let imgData = try? Data(contentsOf: imgUrl!)
+        touringCell.touringImgView.image = UIImage(data: imgData!)
+        touringCell.touringImgView.clipsToBounds = true
+        touringCell.touringImgView.layer.cornerRadius = touringCell.touringImgView.frame.height / 2
+        
+        touringCell.touringNameLabel.text = storyArray[indexPath.row].storyTitle
         
         return touringCell
     }

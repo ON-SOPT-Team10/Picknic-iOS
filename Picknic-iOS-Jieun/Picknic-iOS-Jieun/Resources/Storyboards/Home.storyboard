@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,8 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="cEo-MC-ZdD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈 탭입니다:) " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJl-Hn-qXf">
+                                <rect key="frame" x="48" y="343" width="318" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 탭도 눌러서 구경해주세요~~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cc-kh-XWi">
+                                <rect key="frame" x="94.5" y="392" width="225" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qTE-pZ-g3j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UJl-Hn-qXf" firstAttribute="top" secondItem="qTE-pZ-g3j" secondAttribute="top" constant="299" id="VVo-fC-5iB"/>
+                            <constraint firstItem="qTE-pZ-g3j" firstAttribute="trailing" secondItem="UJl-Hn-qXf" secondAttribute="trailing" constant="48" id="aR0-IN-cTF"/>
+                            <constraint firstItem="3cc-kh-XWi" firstAttribute="centerX" secondItem="qTE-pZ-g3j" secondAttribute="centerX" id="cbe-WI-yik"/>
+                            <constraint firstItem="UJl-Hn-qXf" firstAttribute="leading" secondItem="qTE-pZ-g3j" secondAttribute="leading" constant="48" id="kOr-9f-hjz"/>
+                            <constraint firstItem="3cc-kh-XWi" firstAttribute="top" secondItem="UJl-Hn-qXf" secondAttribute="bottom" constant="28" id="rLn-y1-yUD"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnq-VM-Fqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,4 +7,5 @@ target 'Picknic-iOS-Jieun' do
 
   # Pods for Picknic-iOS-Jieun
   pod 'Alamofire'
+  pod 'Kingfisher'
 end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -48,7 +48,7 @@
                                                         <size key="itemSize" width="116" height="128"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="20" minY="0.0" maxX="100" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TouringCVCell" id="oxy-tG-ASu" customClass="TouringCVCell" customModule="Picknic_iOS_Jieun" customModuleProvider="target">
@@ -203,29 +203,34 @@
                                                     <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listBtnBookmark3" translatesAutoresizingMaskIntoConstraints="NO" id="kBI-Gt-Mdj">
-                                                    <rect key="frame" x="351" y="19" width="47" height="49"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="kBI-Gt-Mdj" secondAttribute="height" multiplier="22:23" id="cR4-L8-4io"/>
-                                                        <constraint firstAttribute="height" constant="49" id="htK-GS-YAF"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남는 시간에 뭐하지?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsZ-qJ-PNh">
                                                     <rect key="frame" x="25" y="192" width="120" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGS-my-oiL">
+                                                    <rect key="frame" x="351" y="19" width="47" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="2Zc-PX-UDv"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="UP0-Tk-5Hy"/>
+                                                        <constraint firstAttribute="width" constant="47" id="jWg-4b-Ft7"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="listBtnBookmark4"/>
+                                                    <connections>
+                                                        <action selector="touchUpBookmarkBtn:" destination="GmB-IU-JRP" eventType="touchUpInside" id="2vy-6y-1ug"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xsZ-qJ-PNh" firstAttribute="top" secondItem="dXZ-zp-eiW" secondAttribute="bottom" constant="5" id="3CS-sq-92S"/>
                                                 <constraint firstItem="q88-3h-h2F" firstAttribute="centerY" secondItem="xsZ-qJ-PNh" secondAttribute="centerY" id="6aS-Li-MOA"/>
                                                 <constraint firstItem="q88-3h-h2F" firstAttribute="leading" secondItem="HZy-jH-gOV" secondAttribute="trailing" constant="3" id="894-Ld-VRW"/>
+                                                <constraint firstItem="SGS-my-oiL" firstAttribute="top" secondItem="vNV-Xz-PaJ" secondAttribute="top" constant="19" id="8Bi-NC-1en"/>
                                                 <constraint firstItem="377-F5-wIA" firstAttribute="top" secondItem="vNV-Xz-PaJ" secondAttribute="top" id="9fC-PE-75e"/>
                                                 <constraint firstItem="dXZ-zp-eiW" firstAttribute="top" secondItem="377-F5-wIA" secondAttribute="bottom" constant="18" id="CW3-Zd-4Li"/>
                                                 <constraint firstItem="377-F5-wIA" firstAttribute="leading" secondItem="vNV-Xz-PaJ" secondAttribute="leading" id="Gk5-Rb-68i"/>
-                                                <constraint firstItem="kBI-Gt-Mdj" firstAttribute="top" secondItem="vNV-Xz-PaJ" secondAttribute="top" constant="19" id="K3e-qP-9eL"/>
-                                                <constraint firstAttribute="trailing" secondItem="kBI-Gt-Mdj" secondAttribute="trailing" constant="16" id="Ku8-Al-iYp"/>
+                                                <constraint firstAttribute="trailing" secondItem="SGS-my-oiL" secondAttribute="trailing" constant="16" id="Hgf-JU-IYa"/>
                                                 <constraint firstAttribute="trailing" secondItem="q88-3h-h2F" secondAttribute="trailing" constant="24" id="LEC-9R-vSg"/>
                                                 <constraint firstAttribute="trailing" secondItem="377-F5-wIA" secondAttribute="trailing" id="O8d-9R-rci"/>
                                                 <constraint firstItem="HZy-jH-gOV" firstAttribute="centerY" secondItem="xsZ-qJ-PNh" secondAttribute="centerY" id="Ocq-FT-Xee"/>
@@ -235,7 +240,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="isBookmarkSelectedImgView" destination="kBI-Gt-Mdj" id="GSi-ZW-ISk"/>
+                                            <outlet property="bookmarkSelectBtn" destination="SGS-my-oiL" id="81f-7F-m3G"/>
                                             <outlet property="picklistBookmarkCntLabel" destination="q88-3h-h2F" id="OMX-h8-Xlf"/>
                                             <outlet property="picklistImgView" destination="377-F5-wIA" id="DZo-0h-QQz"/>
                                             <outlet property="picklistSubtitleLabel" destination="xsZ-qJ-PNh" id="oej-SI-ZJ7"/>
@@ -283,7 +288,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="listBtnBookmark3" width="49" height="49"/>
+        <image name="listBtnBookmark4" width="49" height="49"/>
         <image name="listIcnBookmark" width="17" height="17"/>
         <image name="listImgContents1" width="375" height="147"/>
         <systemColor name="systemBackgroundColor">

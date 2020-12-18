@@ -12,6 +12,11 @@
 		33ADC18A25709A0E001CD6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ADC18825709A0E001CD6A6 /* Main.storyboard */; };
 		33ADC18C25709A0E001CD6A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ADC18B25709A0E001CD6A6 /* Assets.xcassets */; };
 		33ADC18F25709A0E001CD6A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ADC18D25709A0E001CD6A6 /* LaunchScreen.storyboard */; };
+		33BEBB06258CAEAA00883D57 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBB05258CAEAA00883D57 /* ProfileService.swift */; };
+		33BEBB09258CAF0100883D57 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBB08258CAF0100883D57 /* ProfileData.swift */; };
+		33BEBB0C258CB38800883D57 /* ImageUploadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBB0B258CB38800883D57 /* ImageUploadData.swift */; };
+		33BEBB0F258CCA3800883D57 /* BasicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBB0E258CCA3800883D57 /* BasicModel.swift */; };
+		33BEBB12258CCA5800883D57 /* BookmarkToggleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBB11258CCA5800883D57 /* BookmarkToggleService.swift */; };
 		33D7CAC425709D4E00057CF2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7CAC325709D4E00057CF2 /* APIConstants.swift */; };
 		33D7CAC725709D7000057CF2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D7CAC625709D7000057CF2 /* Profile.storyboard */; };
 		33D7CACA25709D8800057CF2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7CAC925709D8800057CF2 /* MainVC.swift */; };
@@ -31,6 +36,8 @@
 		33D7CB022570A80600057CF2 /* PicklistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7CB012570A80600057CF2 /* PicklistData.swift */; };
 		33D7CB052570AA9C00057CF2 /* TouringlistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7CB042570AA9C00057CF2 /* TouringlistData.swift */; };
 		33D7CB082570AAA900057CF2 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7CB072570AAA900057CF2 /* TagData.swift */; };
+		33F54D5D258B9F3C0066122E /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F54D5C258B9F3C0066122E /* MainService.swift */; };
+		33F54D60258B9FF30066122E /* MainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F54D5F258B9FF30066122E /* MainData.swift */; };
 		4308EA0A439CC7AE07F2C503 /* Pods_Picknic_iOS_Jieun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D503AB03343366BC92CFD6AC /* Pods_Picknic_iOS_Jieun.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +49,11 @@
 		33ADC18B25709A0E001CD6A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33ADC18E25709A0E001CD6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33ADC19025709A0E001CD6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33BEBB05258CAEAA00883D57 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		33BEBB08258CAF0100883D57 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		33BEBB0B258CB38800883D57 /* ImageUploadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadData.swift; sourceTree = "<group>"; };
+		33BEBB0E258CCA3800883D57 /* BasicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
+		33BEBB11258CCA5800883D57 /* BookmarkToggleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkToggleService.swift; sourceTree = "<group>"; };
 		33D7CAC325709D4E00057CF2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		33D7CAC625709D7000057CF2 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		33D7CAC925709D8800057CF2 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -61,6 +73,8 @@
 		33D7CB012570A80600057CF2 /* PicklistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicklistData.swift; sourceTree = "<group>"; };
 		33D7CB042570AA9C00057CF2 /* TouringlistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringlistData.swift; sourceTree = "<group>"; };
 		33D7CB072570AAA900057CF2 /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
+		33F54D5C258B9F3C0066122E /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		33F54D5F258B9FF30066122E /* MainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainData.swift; sourceTree = "<group>"; };
 		40C4D936B532F84619260523 /* Pods-Picknic-iOS-Jieun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picknic-iOS-Jieun.debug.xcconfig"; path = "Target Support Files/Pods-Picknic-iOS-Jieun/Pods-Picknic-iOS-Jieun.debug.xcconfig"; sourceTree = "<group>"; };
 		43DEC8A4E2A18F444D57BC3A /* Pods-Picknic-iOS-Jieun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picknic-iOS-Jieun.release.xcconfig"; path = "Target Support Files/Pods-Picknic-iOS-Jieun/Pods-Picknic-iOS-Jieun.release.xcconfig"; sourceTree = "<group>"; };
 		D503AB03343366BC92CFD6AC /* Pods_Picknic_iOS_Jieun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picknic_iOS_Jieun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +170,9 @@
 				33D7CAC325709D4E00057CF2 /* APIConstants.swift */,
 				33D7CAD025709DC900057CF2 /* NetworkResults.swift */,
 				33D7CAD325709DD500057CF2 /* GenericResponse.swift */,
+				33F54D5C258B9F3C0066122E /* MainService.swift */,
+				33BEBB05258CAEAA00883D57 /* ProfileService.swift */,
+				33BEBB11258CCA5800883D57 /* BookmarkToggleService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -194,6 +211,10 @@
 				33D7CB012570A80600057CF2 /* PicklistData.swift */,
 				33D7CB042570AA9C00057CF2 /* TouringlistData.swift */,
 				33D7CB072570AAA900057CF2 /* TagData.swift */,
+				33F54D5F258B9FF30066122E /* MainData.swift */,
+				33BEBB08258CAF0100883D57 /* ProfileData.swift */,
+				33BEBB0B258CB38800883D57 /* ImageUploadData.swift */,
+				33BEBB0E258CCA3800883D57 /* BasicModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,13 +363,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F54D60258B9FF30066122E /* MainData.swift in Sources */,
 				33D7CB052570AA9C00057CF2 /* TouringlistData.swift in Sources */,
 				33D7CACD25709D9300057CF2 /* ProfileVC.swift in Sources */,
+				33BEBB09258CAF0100883D57 /* ProfileData.swift in Sources */,
 				33D7CAF12570A5FA00057CF2 /* TouringTVCell.swift in Sources */,
 				33D7CAD125709DC900057CF2 /* NetworkResults.swift in Sources */,
+				33BEBB0F258CCA3800883D57 /* BasicModel.swift in Sources */,
 				33D7CAC425709D4E00057CF2 /* APIConstants.swift in Sources */,
 				33D7CAE725709F9800057CF2 /* HomeVC.swift in Sources */,
 				33D7CAEE25709FBC00057CF2 /* TabbarVC.swift in Sources */,
+				33F54D5D258B9F3C0066122E /* MainService.swift in Sources */,
 				33D7CAFF2570A6B000057CF2 /* PicklistTagCVCell.swift in Sources */,
 				33D7CACA25709D8800057CF2 /* MainVC.swift in Sources */,
 				33D7CAF72570A62C00057CF2 /* PicklistTVCell.swift in Sources */,
@@ -356,10 +381,13 @@
 				33D7CB022570A80600057CF2 /* PicklistData.swift in Sources */,
 				33D7CAFC2570A6A000057CF2 /* TouringCVCell.swift in Sources */,
 				33ADC18525709A0E001CD6A6 /* SceneDelegate.swift in Sources */,
+				33BEBB12258CCA5800883D57 /* BookmarkToggleService.swift in Sources */,
 				33D7CAD425709DD500057CF2 /* GenericResponse.swift in Sources */,
 				33D7CAE425709F8A00057CF2 /* PicklistVC.swift in Sources */,
+				33BEBB0C258CB38800883D57 /* ImageUploadData.swift in Sources */,
 				33D7CB082570AAA900057CF2 /* TagData.swift in Sources */,
 				33D7CAF42570A61F00057CF2 /* PickTagTVCell.swift in Sources */,
+				33BEBB06258CAEAA00883D57 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2ZS26WP93H;
 				INFOPLIST_FILE = "Picknic-iOS-Jieun/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -515,6 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swu.hwangji.Picknic-iOS-Jieun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -527,6 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2ZS26WP93H;
 				INFOPLIST_FILE = "Picknic-iOS-Jieun/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,6 +565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swu.hwangji.Picknic-iOS-Jieun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +30,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="profileIcnSetting"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImgProfile" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-E2-eym">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-E2-eym">
                                 <rect key="frame" x="137" y="185" width="101" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MHR-E2-eym" secondAttribute="height" multiplier="1:1" id="iqQ-Sg-z1H"/>
@@ -44,14 +44,21 @@
                                     <action selector="touchUpPhotoBtn:" destination="xzm-SB-PSB" eventType="touchUpInside" id="axJ-RT-UtS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박참새" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-wb-nM9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-wb-nM9">
                                 <rect key="frame" x="161.66666666666666" y="309" width="52" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="Q6k-1D-ykO"/>
+                                    <constraint firstAttribute="height" constant="24" id="yic-P6-4lf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sot_id@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-MF-Lde">
-                                <rect key="frame" x="121.33333333333333" y="336" width="132.66666666666669" height="19.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-MF-Lde">
+                                <rect key="frame" x="187.66666666666666" y="336" width="0.0" height="19.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19.670000000000002" id="vTk-Eg-aSs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <color key="textColor" red="0.69019607843137254" green="0.69019607843137254" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -195,6 +202,8 @@
                     </view>
                     <connections>
                         <outlet property="profileImgView" destination="MHR-E2-eym" id="qfr-Ug-CiD"/>
+                        <outlet property="userEmailLabel" destination="bdK-MF-Lde" id="Jkk-XE-6oT"/>
+                        <outlet property="userNameLabel" destination="IAt-wb-nM9" id="nP0-L6-5mj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfJ-EJ-HcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,7 +218,6 @@
         <image name="profileIcnNotice" width="27" height="27"/>
         <image name="profileIcnPhoto" width="36" height="36"/>
         <image name="profileIcnSetting" width="24" height="24"/>
-        <image name="profileImgProfile" width="101" height="101"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

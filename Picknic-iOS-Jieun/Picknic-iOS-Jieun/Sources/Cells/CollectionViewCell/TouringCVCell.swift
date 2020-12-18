@@ -11,4 +11,5 @@ class TouringCVCell: UICollectionViewCell {
     
     @IBOutlet var touringImgView: UIImageView!
     @IBOutlet var touringNameLabel: UILabel!
+  
 }
