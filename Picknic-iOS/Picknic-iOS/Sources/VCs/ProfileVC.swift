@@ -63,14 +63,29 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-            guard let selectedImage = info[.originalImage] as? UIImage else {
-                fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-            }
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
 
         profileImageView.image = selectedImage
         
-
-            dismiss(animated: true, completion: nil)
+        addProfileImageService.shared.addProfileImage(image: selectedImage) { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success:
+               print("upload success")
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                   print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        dismiss(animated: true, completion: nil)
         }
 
 }
