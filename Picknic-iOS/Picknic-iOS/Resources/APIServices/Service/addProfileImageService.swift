@@ -7,58 +7,29 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 struct addProfileImageService {
     static let shared = addProfileImageService()
     
-    func addProfileImage(data: String,
-                completion: @escaping (NetworkResult<Any>) -> ()) {
+    func addProfileImage(image:UIImage, completion: @escaping (NetworkResult<Any>) -> (Void)){
         
         let url = APIConstants.profileURL
-        let header: HTTPHeaders = [
-            "Content-Type": "multipart/form-data"
-        ]
-        let body: Parameters = [
-            "data" : data
-        ]
-        let dataRequest = AF.request(url,
-                                     method: .post,
-                                     parameters: body,
-                                     encoding: JSONEncoding.default,
-                                     headers: header)
-        dataRequest.responseData { (response) in
-            switch response.result {
-            case .success:
-                guard let statusCode = response.response?.statusCode else {
-                    return
-                }
+        let header: HTTPHeaders = [ "Content-Type":"multipart/form-data"]
+        
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "\(Date.init().timeIntervalSince1970).jpg", mimeType: "image/jpeg")
+            },
+            to: url, method: .post , headers: header)
+            
+            .uploadProgress(queue: .main, closure: { progress in
+                //Current upload progress of file
+                print("Upload Progress: \(progress.fractionCompleted)")
+            })
+            .response { resp in
+                print("되나,,?",resp)
                 
-                guard let data = response.value else {
-                    return
-                }
-//                completion(judegeSignInData(status: statusCode, data: data))
-                
-            case.failure(let err):
-                print(err)
-                completion(.networkFail)
             }
-        }
     }
-    
-//    private func judegeSignInData(status: Int, data: Data) -> NetworkResult<Any> {
-//        let decoder = JSONDecoder()
-//        guard let decodedData = try?decoder.decode(GenericResponse<SignInData>.self, from: data) else {
-//            return .pathErr
-//        }
-//        switch status {
-//        case 200:
-//            return .success(decodedData.data)
-//        case 400:
-//            return .requestErr(decodedData.message)
-//        case 500:
-//            return .serverErr
-//        default:
-//            return .pathErr
-//        }
-//    }
 }

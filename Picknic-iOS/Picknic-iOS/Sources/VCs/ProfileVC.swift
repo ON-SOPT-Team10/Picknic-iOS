@@ -27,6 +27,7 @@ class ProfileVC: UIViewController {
         imagePickerController.delegate = self
         
         present(imagePickerController, animated: true, completion: nil)
+        
     }
     
     func getData() {
@@ -55,7 +56,7 @@ class ProfileVC: UIViewController {
 
 
 }
-extension ProfileVC: UIImagePickerControllerDelegate {
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -66,14 +67,10 @@ extension ProfileVC: UIImagePickerControllerDelegate {
                 fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
             }
 
-//        profileImageView.layer.cornerRadius = 50
         profileImageView.image = selectedImage
         
 
             dismiss(animated: true, completion: nil)
         }
-
-}
-extension ProfileVC: UINavigationControllerDelegate {
 
 }
