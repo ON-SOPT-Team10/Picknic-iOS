@@ -29,9 +29,11 @@
 		6B4113DE256E29D800D988D1 /* HashTagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4113DD256E29D800D988D1 /* HashTagCollectionCell.swift */; };
 		6B4113E1256E6B5C00D988D1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4113E0256E6B5C00D988D1 /* CustomButton.swift */; };
 		6B4113E4256E764C00D988D1 /* ListProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4113E3256E764C00D988D1 /* ListProfile.swift */; };
+		6B6146F8258CABEE00CD8E65 /* profileImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6146F7258CABEE00CD8E65 /* profileImageData.swift */; };
 		6B91C60D258A32220005A706 /* profileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91C60C258A32220005A706 /* profileDataModel.swift */; };
 		6B91C611258A32DB0005A706 /* getProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91C610258A32DB0005A706 /* getProfileService.swift */; };
 		6B91C61B258A4F300005A706 /* CustomProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91C61A258A4F300005A706 /* CustomProfileImage.swift */; };
+		6B91C61E258A50A80005A706 /* addProfileImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91C61D258A50A80005A706 /* addProfileImageService.swift */; };
 		6BC836C92563E3EA00C2A3ED /* PickListTableCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */; };
 		6BC836CC2563E7AE00C2A3ED /* ProfileCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */; };
 		D3AE45019961BDDDC927FC9C /* Pods_Picknic_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BA727B8C9EA128E5251331 /* Pods_Picknic_iOS.framework */; };
@@ -63,9 +65,11 @@
 		6B4113DD256E29D800D988D1 /* HashTagCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionCell.swift; sourceTree = "<group>"; };
 		6B4113E0256E6B5C00D988D1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		6B4113E3256E764C00D988D1 /* ListProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfile.swift; sourceTree = "<group>"; };
+		6B6146F7258CABEE00CD8E65 /* profileImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileImageData.swift; sourceTree = "<group>"; };
 		6B91C60C258A32220005A706 /* profileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileDataModel.swift; sourceTree = "<group>"; };
 		6B91C610258A32DB0005A706 /* getProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfileService.swift; sourceTree = "<group>"; };
 		6B91C61A258A4F300005A706 /* CustomProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileImage.swift; sourceTree = "<group>"; };
+		6B91C61D258A50A80005A706 /* addProfileImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProfileImageService.swift; sourceTree = "<group>"; };
 		6BC836C82563E3EA00C2A3ED /* PickListTableCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickListTableCell0.swift; sourceTree = "<group>"; };
 		6BC836CB2563E7AE00C2A3ED /* ProfileCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionCell.swift; sourceTree = "<group>"; };
 		83BA727B8C9EA128E5251331 /* Pods_Picknic_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picknic_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				6B91C60C258A32220005A706 /* profileDataModel.swift */,
+				6B6146F7258CABEE00CD8E65 /* profileImageData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				6B91C610258A32DB0005A706 /* getProfileService.swift */,
+				6B91C61D258A50A80005A706 /* addProfileImageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -354,11 +360,13 @@
 				1C8438B8255FC8A30095DF11 /* AppDelegate.swift in Sources */,
 				33841C74257B558F0058339F /* NetworkResults.swift in Sources */,
 				33B525ED255FCD160081221E /* HomeVC.swift in Sources */,
+				6B91C61E258A50A80005A706 /* addProfileImageService.swift in Sources */,
 				33B525F3255FCD310081221E /* ProfileVC.swift in Sources */,
 				6B91C611258A32DB0005A706 /* getProfileService.swift in Sources */,
 				1C8438B9255FC8A30095DF11 /* SceneDelegate.swift in Sources */,
 				6B91C60D258A32220005A706 /* profileDataModel.swift in Sources */,
 				33841C6E257B555C0058339F /* APIConstants.swift in Sources */,
+				6B6146F8258CABEE00CD8E65 /* profileImageData.swift in Sources */,
 				6B4113E4256E764C00D988D1 /* ListProfile.swift in Sources */,
 				6B4113E1256E6B5C00D988D1 /* CustomButton.swift in Sources */,
 				6B0ACC752564D30A007E0547 /* Item.swift in Sources */,
