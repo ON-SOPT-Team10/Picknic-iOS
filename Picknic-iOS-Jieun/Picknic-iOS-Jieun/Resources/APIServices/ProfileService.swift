@@ -69,6 +69,16 @@ struct ProfileService {
                 //Current upload progress of file
                 print("Upload Progress: \(progress.fractionCompleted)")
             })
+            .responseJSON(completionHandler: { response in
+                        //Do what ever you want to do with response
+                            if let error = response.error {
+                                print(error)
+                            }
+                            guard let data = response.value else {
+                                return
+                            }
+                            print(data)
+                })
             .response { resp in
                 print("안녕",resp)
                 
