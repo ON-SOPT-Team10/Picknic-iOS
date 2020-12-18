@@ -28,7 +28,7 @@ struct addProfileImageService {
                 print("Upload Progress: \(progress.fractionCompleted)")
             })
             .response { resp in
-                print("되나,,?",resp)
+                print("성공〰️❗️",resp)
                 
             }
     }

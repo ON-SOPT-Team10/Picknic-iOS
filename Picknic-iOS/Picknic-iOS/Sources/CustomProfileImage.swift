@@ -11,7 +11,8 @@ class CustomProfileImage: UIImageView {
 
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
-        self.layer.cornerRadius = 50
+        self.clipsToBounds = true
+        self.layer.cornerRadius = self.frame.height / 2
     }
     /*
     // Only override draw() if you perform custom drawing.
