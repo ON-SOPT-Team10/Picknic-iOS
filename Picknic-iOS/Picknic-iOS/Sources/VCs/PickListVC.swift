@@ -11,21 +11,91 @@ class PickListVC: UIViewController {
 
     @IBOutlet var pickListTableView: UITableView!
     
-    var items: [Item] = []
+    private var stories: [ListProfile] = []
+    private var items: [Item] = []
+    private var selectedCell: IndexPath?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setItemData()
+        getData()
         pickListTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
-    func setItemData(){
-        items.append(contentsOf: [
-        Item(title: "퇴근하고 한강에서 만나요, 한강 취미 5", subtitle: "남는 시간에 뭐하지?", imageName: "listImgContents1", bookmark: "247"),
-        Item(title: "가을향 가득한 전어 요리를 먹으러 가려면...", subtitle: "오늘은 뭘 먹지? 전어를 먹을까 맛있겠지 전어", imageName: "listImgContents2", bookmark: "123"),
-        Item(title: "선선해서 딱 좋은 아차산 나홀로 등산", subtitle: "건강한 아웃도어 라이프", imageName: "listImgContents3", bookmark: "54"),
-        Item(title: "따스하고 포근한 내 방 인테리어 TIP", subtitle: "나도 할 수 있다! 내 방 꾸미기!", imageName: "listImgContents2", bookmark: "472")])
+    func getData() {
+        getMainService.shared.getMain() { (result) in
+            switch(result) {
+            case .success(let data):
+                self.items = []
+                self.stories = []
+                if let mainDataModel = data as? mainDataModel {
+                    for feed in mainDataModel.feeds {
+                        let newItem = Item(
+                            id: feed.id,
+                            title: feed.feedTitle,
+                            subtitle: feed.feedContents,
+                            imageName: feed.feedImage,
+                            bookmark: "\(feed.bookmarkCount)",
+                            isBookmarked: feed.isBookmarked
+                        )
+                        self.items.append(newItem)
+                    }
+                    
+                    for story in mainDataModel.stories {
+                        let newStory = ListProfile(imageName: story.storyImage, nickName: story.storyTitle)
+                        self.stories.append(newStory)
+                    }
+                    self.pickListTableView.reloadData()
+                }
+            case .requestErr(_):
+                print("error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+
     }
+    
+    @IBAction func bookmarkButtonTapped(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? PickListTableCell2 else {
+            return // or fatalError() or whatever
+        }
+        
+        let indexPath = pickListTableView.indexPath(for: cell)
+        
+        if let row = indexPath?.row {
+            print(row - 1)
+            putBookmarkService.shared.putBookmark(row - 1) { [weak self] (result) in
+                switch(result) {
+                case .success(_):
+                    if let row = indexPath?.row, let items = self?.items {
+                        if (items[row - 1].isBookmarked) {
+                            sender.setImage(UIImage(named: "listBtnBookmark1"), for: .normal)
+                        }
+                        else {
+                            sender.setImage(UIImage(named: "selectBookmark"), for: .normal)
+                        }
+                    }
+                    self?.getData()
+                    print("success")
+                case .requestErr(_):
+                    print("error")
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }
+        }
+        
+    }
+    
 }
 extension PickListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +109,7 @@ extension PickListVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell0.identifier) as? PickListTableCell0 else {
                 return UITableViewCell()
             }
-            cell.setCell()
+            cell.setCell(data: stories)
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell1.identifier) as? PickListTableCell1 else {
@@ -51,9 +121,8 @@ extension PickListVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PickListTableCell2.identifier) as? PickListTableCell2 else { return UITableViewCell() }
             cell.setCell(item: items[indexPath.row - 2])
             return cell
-//            break
+
         }
-        
-//        return UITableViewCell()
     }
+  
 }

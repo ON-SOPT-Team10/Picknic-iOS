@@ -29,7 +29,11 @@ struct getProfileService {
                 let json = JSON(value)
                 
                 let networkResult = self.judge(by: statusCode, json)
-                completion(networkResult)
+                
+                DispatchQueue.main.async {
+                    completion(networkResult)
+                }
+                
             case .failure:
                 completion(.networkFail)
             }
@@ -51,7 +55,7 @@ struct getProfileService {
     
     private func getProfile(by json: JSON) -> NetworkResult<Any> {
         let data = json["data"] as JSON
-        var profileData = profileDataModel(id: data["id"].intValue,
+        let profileData = profileDataModel(id: data["id"].intValue,
                                            profileImage: data["profileImage"].stringValue,
                                            userName: data["userName"].stringValue,
                                            userEmail: data["userEmail"].stringValue)

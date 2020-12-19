@@ -12,9 +12,12 @@ struct APIConstants {
     
     
     // 리스트 뷰
-    
+    static let mainURL = APIConstants.baseURL + "/main"
     
     
     // 프로필 뷰
     static let profileURL = APIConstants.baseURL + "/profile"
+    
+    
+    static let bookmarkURL = APIConstants.baseURL + "/bookmark"
 }

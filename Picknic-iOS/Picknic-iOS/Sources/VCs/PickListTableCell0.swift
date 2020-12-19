@@ -8,7 +8,7 @@
 import UIKit
 
 class PickListTableCell0: UITableViewCell {
-
+    
     static let identifier = "PickListTableCell0"
     @IBOutlet var cellTitleLabel: UILabel!
     
@@ -23,34 +23,28 @@ class PickListTableCell0: UITableViewCell {
     let rightSpacing: CGFloat = 20
     let lineSpacing: CGFloat = 30
     
-    func setCell() {
-        setProfileData()
+    func setCell(data: [ListProfile]) {
+        listProfiles = data
         cell0CollectionView.dataSource = self
         cell0CollectionView.delegate = self
+        cell0CollectionView.reloadData()
     }
-    func setProfileData(){
-        listProfiles.append(contentsOf: [
-        ListProfile(imageName: "curator1", nickName: "할리스커피"),
-        ListProfile(imageName: "curator2", nickName: "동역사거주자"),
-        ListProfile(imageName: "curator3", nickName: "뮤지컬볼래"),
-        ListProfile(imageName: "curator3", nickName: "퇴근하고싶다")
-        ])
-    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
 extension PickListTableCell0: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return listProfiles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,7 +63,7 @@ extension PickListTableCell0: UICollectionViewDelegateFlowLayout {
         let cellWidth = (collectionView.frame.width - lineSpacing - rightSpacing) / 4.5
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return lineSpacing }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

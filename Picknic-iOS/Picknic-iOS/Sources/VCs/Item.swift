@@ -8,12 +8,10 @@
 import UIKit
 
 struct Item {
+    var id: Int
     var title: String
     var subtitle: String
     var imageName: String
     var bookmark: String
-    
-    func makeImage() -> UIImage? {
-        return UIImage(named: imageName)
-    }
+    var isBookmarked: Bool
 }

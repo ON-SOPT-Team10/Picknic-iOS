@@ -10,8 +10,4 @@ import UIKit
 struct ListProfile {
     var imageName: String
     var nickName: String
-    
-    func makeImage() -> UIImage? {
-        return UIImage(named: imageName)
-    }
 }

@@ -16,7 +16,13 @@ class ProfileCollectionCell: UICollectionViewCell {
     static let identifier = "ProfileCollectionCell"
     
     func setItemCell(profile: ListProfile) {
-        profileImage.image = profile.makeImage()
+        DispatchQueue.global().async {
+            let url =  URL(string: profile.imageName)
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                self.profileImage.image = UIImage(data: data!)
+            }
+        }
         nicknameLabel.text = profile.nickName
     }
     
